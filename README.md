@@ -7,6 +7,7 @@
 - Provides a REST API for managing alerts
 - Secure database storage for alerts
 - Scalable infrastructure on AWS
+- CI/CD with Github Actions
 
 #### Supported symbols
 
