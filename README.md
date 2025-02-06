@@ -30,6 +30,7 @@
 - AWS Credentials (for sending alerts via SNS)
 - Terraform installed (for infrastructure as code)
 - `.env` file with required configurations
+- Secrets of AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY for Github Actions
 
 #### Build and Run
 
@@ -55,6 +56,7 @@ SNS_TOPIC_ARN=arn:aws:sns:eu-central-1:140595603548:price-alerts-topic
 
 - The **MongoDB URI** is stored as **plain text** under the secret name `alert-service-db`
 - **Secret Value (Plain Text Example):** `mongodb+srv://username:password@your-cluster.mongodb.net/alert-service`
+- For Github Actions, AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY should be set in Secrets/Actions
 
 #### Deploying Alert Service (ECS)
 
