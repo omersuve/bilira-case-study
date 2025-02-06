@@ -1,0 +1,13 @@
+.env
+
+dist/
+
+node_modules/
+
+infra/.terraform/
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/.terraform.lock.hcl
+
+terraform.tfvars
+*.auto.tfvars

@@ -1,0 +1,35 @@
+name: Lambda CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "lambda/**"
+      - ".github/workflows/lambda-ci.yml"
+
+jobs:
+  deploy-lambda:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lambda # Restrict to lambda directory
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Install Dependencies
+        run: npm install --omit=dev
+
+      - name: Deploy Lambda
+        run: |
+          chmod +x ./deploy.sh
+          ./deploy.sh

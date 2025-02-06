@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "7700df45-9a59-4b06-a613-eb3c92587eb9",
+		"name": "bilira",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12236401"
+	},
+	"item": [
+		{
+			"name": "get alerts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://alert-service-alb-1399958634.eu-central-1.elb.amazonaws.com/alerts",
+					"protocol": "http",
+					"host": [
+						"alert-service-alb-1399958634",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get an alert",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://alert-service-alb-1399958634.eu-central-1.elb.amazonaws.com/alerts/67a0faf1316235694eaa44a2",
+					"protocol": "http",
+					"host": [
+						"alert-service-alb-1399958634",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"alerts",
+						"67a0faf1316235694eaa44a2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add alert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"symbol\": \"eth\",\n    \"condition\": \">\",\n    \"price\": 2777\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://alert-service-alb-1399958634.eu-central-1.elb.amazonaws.com/alerts",
+					"protocol": "http",
+					"host": [
+						"alert-service-alb-1399958634",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"alerts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change alert",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"price\": 2972\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://alert-service-alb-1399958634.eu-central-1.elb.amazonaws.com/alerts/67a0faf1316235694eaa44a2",
+					"protocol": "http",
+					"host": [
+						"alert-service-alb-1399958634",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"alerts",
+						"67a0faf1316235694eaa44a2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove alert",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://alert-service-alb-1399958634.eu-central-1.elb.amazonaws.com/alerts/67a140b3316235694eaa455c",
+					"protocol": "http",
+					"host": [
+						"alert-service-alb-1399958634",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"alerts",
+						"67a140b3316235694eaa455c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://alert-service-alb-1399958634.eu-central-1.elb.amazonaws.com/health",
+					"protocol": "http",
+					"host": [
+						"alert-service-alb-1399958634",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
